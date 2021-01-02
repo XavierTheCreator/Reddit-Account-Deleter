@@ -86,23 +86,27 @@ def questionUser():
 
     if pick == 'account':
         deleteAccount()
-driver = webdriver.Chrome('/usr/lib/chromium-browser/chromedriver')  # Optional argument, if not specified will search path.
-# or '/usr/lib/chromium-browser/chromedriver' if you use chromium-chromedriver
+        
+        
+        
+if __name__ == '__main__': 
+    driver = webdriver.Chrome('/usr/lib/chromium-browser/chromedriver')  # Optional argument, if not specified will search path.
+    # or '/usr/lib/chromium-browser/chromedriver' if you use chromium-chromedriver
 
-# GET DATA FROM USER
+    # GET DATA FROM USER
 
-name = input("Name: ")
-password = input("Password: ")
+    name = input("Name: ")
+    password = input("Password: ")
 
-# 
+    # 
 
-# LOG IN TO REDDIT 
-driver.get("https://www.reddit.com/login/")
-driver.find_element_by_id('loginUsername').send_keys(name)
-driver.find_element_by_id('loginPassword').send_keys(password)
-driver.find_element_by_xpath('/html/body/div/div/div[2]/div/form/div[1]/fieldset[5]/button').click()
-time.sleep(10)
-#
+    # LOG IN TO REDDIT 
+    driver.get("https://www.reddit.com/login/")
+    driver.find_element_by_id('loginUsername').send_keys(name)
+    driver.find_element_by_id('loginPassword').send_keys(password)
+    driver.find_element_by_xpath('/html/body/div/div/div[2]/div/form/div[1]/fieldset[5]/button').click()
+    time.sleep(10)
+    #
 
-questionUser()
+    questionUser()
 
